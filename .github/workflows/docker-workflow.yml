@@ -29,7 +29,7 @@ jobs:
           git show-ref --tags --quiet --verify -- "refs/tags/$sharp_version" || release_exists="false"
           echo "release_exists=$release_exists" >> $GITHUB_OUTPUT
       - name: Build
-        run: npm ci --arch=x64 --platform=linux
+        run: npm install --arch=x64 --platform=linux
       - name: Create release
         uses: svenstaro/upload-release-action@v2
         with:
